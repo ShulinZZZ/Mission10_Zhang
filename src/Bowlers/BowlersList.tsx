@@ -35,14 +35,14 @@ function BowlersList() {
         <tbody>
           {bowlersData.map((b) => {
             return (
-              <tr key={b.BowlerID}>
-                <td>{`${b.BowlerFirstName} ${b.BowlerMiddleInit} ${b.BowlerLastName}`}</td>
-                <td>{b.teamName}</td>
-                <td>{b.BowlerAddress}</td>
-                <td>{b.BowlerCity}</td>
-                <td>{b.BowlerState}</td>
-                <td>{b.BowlerZip}</td>
-                <td>{b.BowlerPhoneNumber}</td>
+              <tr key={b.bowlerID}>
+                <td>{`${b.bowlerFirstName} ${b.bowlerMiddleInit} ${b.bowlerLastName}`}</td>
+                <td>{b.team.teamName}</td>
+                <td>{b.bowlerAddress}</td>
+                <td>{b.bowlerCity}</td>
+                <td>{b.bowlerState}</td>
+                <td>{b.bowlerZip}</td>
+                <td>{b.bowlerPhoneNumber}</td>
               </tr>
             );
           })}
