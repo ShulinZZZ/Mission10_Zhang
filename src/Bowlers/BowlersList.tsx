@@ -7,11 +7,12 @@ function BowlersList() {
   //useEffect: data transfer
   useEffect(() => {
     const fetchBowlerData = async () => {
-      const rsp = await fetch('http://localhost:3000/BowlerInfo');
-      const f = await rsp.json();
-      setbowlersData(f);
+      const rsp = await fetch('http://localhost:5281/api/Bowler');
+      const b = await rsp.json();
+      setbowlersData(b);
     };
     fetchBowlerData();
+    //if we do not find anything, return empty array
   }, []);
 
   return (
@@ -32,16 +33,16 @@ function BowlersList() {
           </tr>
         </thead>
         <tbody>
-          {bowlersData.map((f) => {
+          {bowlersData.map((b) => {
             return (
-              <tr key={f.BowlerID}>
-                <td>{`${f.BowlerFirstName} ${f.BowlerMiddleInit} ${f.BowlerLastName}`}</td>
-                <td>{f.teamName}</td>
-                <td>{f.BowlerAddress}</td>
-                <td>{f.BowlerCity}</td>
-                <td>{f.BowlerState}</td>
-                <td>{f.BowlerZip}</td>
-                <td>{f.BowlerPhoneNumber}</td>
+              <tr key={b.BowlerID}>
+                <td>{`${b.BowlerFirstName} ${b.BowlerMiddleInit} ${b.BowlerLastName}`}</td>
+                <td>{b.teamName}</td>
+                <td>{b.BowlerAddress}</td>
+                <td>{b.BowlerCity}</td>
+                <td>{b.BowlerState}</td>
+                <td>{b.BowlerZip}</td>
+                <td>{b.BowlerPhoneNumber}</td>
               </tr>
             );
           })}
