@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './Header';
+import BowlersList from './Bowlers/BowlersList';
+// import bowlersData from './BowlingLeague.sqlite';
+
+function Welcome() {
+  return (
+    <div>
+      <h1> Welcome to Bowling League</h1>
+      <p>
+        This site lists out the information about the bowlers on Marlins or
+        Sharks Teams in the Bowling League
+      </p>
+    </div>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="Mission 10_Zhang -- BOWLING LEAGUE" />
+      <Welcome />
+      <BowlersList />
     </div>
   );
 }
